@@ -1,10 +1,38 @@
 import './App.css';
-import ExpenseItem from "./Components/ExpenseItem"
+import Expenses from "./Components/Expenses"
 
 function App() {
+
+  const dataExpense = [
+    {
+        id: "e1",
+        title: "Toilet Paper",
+        amount: "9.2",
+        date: new Date(2020, 7, 4)
+    },
+    {
+        id: "e2",
+        title: "Mac M1",
+        amount: "1400",
+        date: new Date(2021, 9, 10)
+    },
+    {
+        id: "e2",
+        title: "Bed",
+        amount: "560",
+        date: new Date(2019, 8, 28)
+    },
+    {
+        id: "e3",
+        title: "Car Insurance",
+        amount: "346",
+        date: new Date(2020, 1, 16)
+    },
+
+]
   return (
     <div className="App">
-      <ExpenseItem />
+      <Expenses  items={dataExpense} />
     </div>
   );
 }
