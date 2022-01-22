@@ -49,7 +49,7 @@ const ExpenseForm = ({onSaveExpenseData}) => {
             amount : enteredAmount,
             date: new Date(enteredDate)
         }
-        console.log(expenseData)
+        
         // im passing data up to the parent component.
         onSaveExpenseData(expenseData)
 
