@@ -38,12 +38,12 @@ function App() {
   
 
   
-// this fuctions takes the new  expenses data from child (form) and the dummy data.
-const addExpenseHandler = expense =>{
-  setExpenses((preExpenses)=>{
-    return [expense,  ...preExpenses]
-  });
-}
+  // This function takes the value from NewExpense.js child(and that component takes the value from ExpensesFilter.js ) and the dummy data above.
+  const addExpenseHandler = expense =>{
+    setExpenses((preExpenses)=>{
+      return [expense,  ...preExpenses]
+    });
+  }
   return (
     <div className="App">
       <NewExpense onAddExpense={addExpenseHandler} />

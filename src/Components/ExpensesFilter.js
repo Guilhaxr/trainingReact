@@ -5,19 +5,15 @@ import "../Css/ExpensesFilter.css"
 
 const ExpensesFilter = ({onFilterData, selectYear}) => {
 
-
+  //This fuction has the action of takes the value from "select form" and put that value as argument in the fuction call;
+  //Lifting the state up means pass some value from child to father;
   const filterHandler = (event) => {
 
-    //lifting the state up here
+    //This data (year) is goes trought Expense.js and  stops in App.js;
     onFilterData(event.target.value)
-
   }
 
   
-
-
-
-
   return (
     <div className='expenses-filter'>
       <div className='expenses-filter__control'>

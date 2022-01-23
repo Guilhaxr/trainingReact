@@ -40,20 +40,23 @@ const ExpenseForm = ({onSaveExpenseData}) => {
         //     return { ...prevState, enteredDate : event.target.value}
         // })
     }
-
+    //In this function 
     const submitHandler = (event) =>{
+        //has the action to the page doesn't reload when the form is sibmit;
         event.preventDefault();
 
+
+        // this object has the values full filled for the user in form; 
         const expenseData = {
             title : enteredTitle,
             amount : enteredAmount,
             date: new Date(enteredDate)
         }
         
-        // im passing data up to the parent component.
+        // im passing data up to the parent component (NewExpense.js).
         onSaveExpenseData(expenseData)
 
-        //clean inputs
+        //clean inputs in form
         setEnteredTitle("");
         setEnteredAmount("");
         setEnteredDate("");
