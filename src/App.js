@@ -1,10 +1,11 @@
 import './App.css';
+import { useState } from 'react';
 import Expenses from "./Components/Expenses"
 import NewExpense from './Components/NewExpense/NewExpense';
 
 function App() {
 
-  const dataExpense = [
+  const dummyExpenses = [
     {
         id: "e1",
         title: "Toilet Paper",
@@ -18,13 +19,13 @@ function App() {
         date: new Date(2021, 9, 10)
     },
     {
-        id: "e2",
+        id: "e3",
         title: "Bed",
         amount: "560",
         date: new Date(2019, 8, 28)
     },
     {
-        id: "e3",
+        id: "e4",
         title: "Car Insurance",
         amount: "346",
         date: new Date(2020, 1, 16)
@@ -32,14 +33,21 @@ function App() {
 
 ]
 
+  const[expenses, setExpenses] = useState(dummyExpenses)
+
+  
+
+  
+// this fuctions takes the new  expenses data from child (form) and the dummy data.
 const addExpenseHandler = expense =>{
-  console.log("In app.js");
-  console.log(expense);
+  setExpenses((preExpenses)=>{
+    return [expense,  ...preExpenses]
+  });
 }
   return (
     <div className="App">
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses  items={dataExpense} />
+      <Expenses  items={expenses} />
     </div>
   );
 }
