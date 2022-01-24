@@ -2,10 +2,12 @@ import "./ExpenseForm.css"
 import { useState } from "react"
 
 
-const ExpenseForm = ({onSaveExpenseData}) => {
+const ExpenseForm = ({onSaveExpenseData, onButtonSwitch}) => {
     const [enteredTitle, setEnteredTitle] = useState("");
     const [enteredAmount, setEnteredAmount] = useState("");
     const [enteredDate, setEnteredDate] = useState("");
+
+    
 
     //other possible alternative
     // const [userInput, setUserInput] = useState({
@@ -62,8 +64,11 @@ const ExpenseForm = ({onSaveExpenseData}) => {
         setEnteredDate("");
     }   
 
+
+
+
 return(
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} >
         <div className="new-expense__controls">
             <div className="new-expense__control">
                 <label>Title</label>
@@ -82,8 +87,10 @@ return(
             </div>
 
         </div>
+    
         <div className="new-expense__actions"> 
-            <button type="submit">Add Expense</button>
+            <button type="button" onClick={onButtonSwitch} >Cancel</button>
+            <button  type="submit" onClick={onButtonSwitch}  >Add Expense</button>
         </div>
     </form>
 
