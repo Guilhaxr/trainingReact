@@ -1,16 +1,19 @@
 import "./Chart.css"
-import ChartBars from "./ChartBars"
+import ChartBars from "./ChartBars" 
 
-const Chart = () =>{
+const Chart = ({dataPoints}) =>{
+
+    const dataPointValues = dataPoints.map((e)=> e.value);
+    const totalMaximum = Math.max(...dataPointValues);
 
     return(
         <div className="chart">
-            {dataPoints.map((element, i)=> 
+            {dataPoints.map((e)=> 
                 <ChartBars
-                    key={i}
-                    value={dataPoints.value} 
-                    MaxValue={null}  
-                    label={dataPoints.label}
+                    key={e.label}
+                    value={e.value} 
+                    maxValue={totalMaximum}  
+                    label={e.label}
                 />       
             )}
 

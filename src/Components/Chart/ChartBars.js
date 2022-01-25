@@ -1,10 +1,10 @@
+import "./CharBars.css"
 
-
-const ChartBars = ({label, max, maxValue, value}) =>{
+const ChartBars = ({label, maxValue, value}) =>{
     let barFillHeight = "0%";
 
-    if(max > 0){
-        barFillHeight =  Math.round((maxValue / value) * 100) + "%";
+    if(maxValue > 0){
+        barFillHeight =  Math.round((value / maxValue) * 100) + "%";
     }
 
     return(
